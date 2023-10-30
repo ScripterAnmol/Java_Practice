@@ -1,24 +1,20 @@
 package week2.helperFunction;
 
 public class Rectangle extends Shape implements Drawable{
-    public Rectangle(){
-        obj.name="Rectangle";
-    }
-    public Rectangle(ShapeValues argValue){
-        obj = argValue;
-        obj.name="Rectangle";
+    public Rectangle(String name,String color){
+        super(name,color);
     }
 
     @Override
-    public double area() {
-        double temp = obj.length*obj.breath;
+    public double area(double length,double breath) {
+        double temp = length*breath;
 
         return temp;
     }
 
     @Override
-    public double perimeter() {
-        return 2*(obj.length+obj.breath);
+    public double perimeter(double length,double breath) {
+        return 2*(length+breath);
     }
 
     @Override

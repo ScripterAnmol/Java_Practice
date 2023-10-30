@@ -11,6 +11,7 @@ public class question8 {
     public static void main(String[] args) {
         int[] array = {5, 3, 9, 1, 7};
 
+//        TODO: change interface and implement sort method
         // Bubble Sort
         SortingAlgorithm bubbleSort = new BubbleSort();
         int[] bubbleSorted = array.clone();

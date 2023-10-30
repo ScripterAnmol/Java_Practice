@@ -14,6 +14,7 @@ public class question5{
         availableProducts.addProduct(new Product(4,"Product 4",1199));
         availableProducts.addProduct(new Product(5,"Product 5",1499));
 
+//        TODO: change array to List
         Order[] placedOrders = new Order[0];
 
         ShoppingCart cart = new ShoppingCart();
@@ -39,7 +40,7 @@ public class question5{
             }
 
             cart.displayOrderItems();
-
+//      Todo: Split it in functions
             if(cart.customerDetails.custName.isEmpty() || cart.customerDetails.custEmail.isEmpty()){
                 Customer cust = new Customer();
                 input.nextLine();

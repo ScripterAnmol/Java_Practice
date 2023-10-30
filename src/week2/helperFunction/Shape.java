@@ -1,21 +1,32 @@
 package week2.helperFunction;
 
 public class Shape {
-    ShapeValues obj = new ShapeValues();
-    public void Shape(ShapeValues argVal){
-        obj = argVal;
+    private String name;
+    private String color;
+
+    public Shape(String name, String color) {
+        this.name=name;
+        this.color=color;
     }
 
-    public double area() {
+    public double area(double radius) {
         return 0;
     }
 
-    public double perimeter() {
+    public double area(double length,double breath) {
+        return 0;
+    }
+
+    public double perimeter(double radius) {
+        return 0;
+    }
+
+    public double perimeter(double length,double breadth) {
         return 0;
     }
 
     public void ShapeDescription(){
-        System.out.println("Shape name: "+obj.name);
-        System.out.println("Shape color: "+obj.color);
+        System.out.println("Shape name: "+this.name);
+        System.out.println("Shape color: "+this.color);
     }
 }

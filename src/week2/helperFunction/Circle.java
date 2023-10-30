@@ -1,25 +1,19 @@
 package week2.helperFunction;
 
 public class Circle extends Shape implements Drawable{
-    public Circle(){
-        obj.name="Circle";
-    }
 
-    public Circle(ShapeValues argValue){
-        obj = argValue;
-        obj.name="Circle";
+    public Circle(String name,String color){
+        super(name,color);
     }
 
     @Override
-    public double area(){
-        double temp = Math.PI*obj.radius*obj.radius;
-
-        return temp;
+    public double area(double radius){
+        return Math.PI*radius*radius;
     }
 
     @Override
-    public double perimeter() {
-        return 2*Math.PI*obj.radius;
+    public double perimeter(double radius){
+        return 2*Math.PI*radius;
     }
 
     @Override
