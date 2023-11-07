@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a59a2aa2-ed68-44ff-8419-b75fb39da432" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/core-module/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core-module/src/main/java/org/example/DemoImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feature-module/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-module/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question3/src/main/java/com/example/HelloSpringBoot/GreetingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question4/src/main/java/com/example/MicroserviceA/DemoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question5/src/main/java/com/example/hellospringboot/controllers/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question5/src/main/java/com/example/hellospringboot/dao/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question5/src/main/java/com/example/hellospringboot/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/controllers/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/controllers/JWTTokenController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/controllers/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/controllers/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/dao/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/dao/OrderItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/dao/OrdersRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/dao/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/entity/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/entity/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/interceptors/RoleInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/interceptors/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/OrderItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/OrderItemServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/OrdersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/OrdersServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/jwttoken/JwtTokenGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../question6/src/main/java/com/example/hellospringboot/service/jwttoken/JwtTokenGeneratorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/helperFunction/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/helperFunction/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/helperFunction/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/helperFunction/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/helperFunction/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/helperFunction/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/helperFunction/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/helperFunction/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/helperFunction/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/helperFunction/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/question2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/question2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/question3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/question3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/question4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/question4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/question5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/question5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/question8.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/question8.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2XU1Q5WHhE3jKnlqKK88kyMTjem" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/U6074524/IdeaProjects/anmolPractice/src/week3/question3"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a59a2aa2-ed68-44ff-8419-b75fb39da432" name="Changes" comment="" />
+      <created>1698668824728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698668824728</updated>
+    </task>
+    <servers />
+  </component>
+</project>
