@@ -2,6 +2,7 @@ package com.example.question1;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuItem{
@@ -9,7 +10,8 @@ public class MenuItem{
     private List<SubnavItem> subnavItemsList;
 
     public MenuItem(){
-
+        this.title="";
+        this.subnavItemsList = new ArrayList<>();
     }
     public MenuItem(String title, List<SubnavItem> subnavItemsList) {
         this.title = title;

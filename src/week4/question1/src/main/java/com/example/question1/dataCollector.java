@@ -34,6 +34,8 @@ public class dataCollector {
             List<MenuItem> menuObjects = new ArrayList<>();
 
             client.getOptions().setJavaScriptEnabled(false);
+            client.getOptions().setCssEnabled(false);
+
             HtmlPage homePage = client.getPage("https://clarivate.com");
             HtmlElement menuElement = homePage.getHtmlElementById("menu-main-menu");
 
@@ -56,6 +58,7 @@ public class dataCollector {
 
                     if (nestedDiv != null) {
                         List<SubnavItem> subnavItemsList = new ArrayList<>();
+                        //[]
 
                         // Access subnav-col elements
                         Iterable<HtmlElement> subnavCols = nestedDiv.getElementsByTagName("div");
@@ -84,13 +87,14 @@ public class dataCollector {
                             }
                         }
 
+
                         currentMenuItem.setSubnavItemsList(subnavItemsList);
                     }
 
-
+                    menuObjects.add(currentMenuItem);
                 }
 
-                menuObjects.add(currentMenuItem);
+
             }
 
             System.out.println("testing");
