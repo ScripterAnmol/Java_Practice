@@ -14,7 +14,11 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 // Todo: without using REST Controller return JSON
+// Todo: Implement H2
+// Todo: Use Controller
+
 @Controller
+@ResponseBody
 public class BookController{
 
     private final BookRepository bookRepository;
