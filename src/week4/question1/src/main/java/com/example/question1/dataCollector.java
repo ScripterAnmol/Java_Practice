@@ -1,27 +1,21 @@
 package com.example.question1;
 
-
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.DomElement;
-import com.gargoylesoftware.htmlunit.html.DomNodeList;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-
-
 
 @RestController
 public class dataCollector {
-
     private final WebClient client;
 
     @Autowired
@@ -31,15 +25,23 @@ public class dataCollector {
     @PostMapping("/scrapData")
     public ResponseEntity<?> scrapData(){
         try{
-            List<MenuItem> menuObjects = new ArrayList<>();
+//            List<MenuItem> menuObjects = new ArrayList<>();
 
             client.getOptions().setJavaScriptEnabled(false);
             client.getOptions().setCssEnabled(false);
 
-            HtmlPage homePage = client.getPage("https://clarivate.com");
+                HtmlPage homePage = client.getPage("https://clarivate.com");
+
             HtmlElement menuElement = homePage.getHtmlElementById("menu-main-menu");
 
-            for(final DomElement childElements: menuElement.getChildElements()){
+//            DomElement childElements = menuElement.getChildElements()[1];
+            Iterable<DomElement> allElements = menuElement.getChildElements();
+            Iterator<DomElement> iterator = allElements.iterator();
+
+            iterator.next();
+            DomElement childElements = iterator.next();
+
+//            for(final DomElement childElements: menuElement.getChildElements()){
                 MenuItem currentMenuItem = new MenuItem();
 
                 /************************/
@@ -58,15 +60,11 @@ public class dataCollector {
 
                     if (nestedDiv != null) {
                         List<SubnavItem> subnavItemsList = new ArrayList<>();
-                        //[]
 
-                        // Access subnav-col elements
                         Iterable<HtmlElement> subnavCols = nestedDiv.getElementsByTagName("div");
 
                         for (HtmlElement subnavCol : subnavCols) {
-                            // Check if the div has the class "subnav-col"
                             if (subnavCol.getAttribute("class").contains("subnav-col")) {
-                                // Access other properties or perform actions with subnavCol
                                 HtmlElement productCategoryTitleElement = subnavCol.getFirstByXPath(".//p[contains(@class, 'product-category-title')]");
                                 String productCategoryTitle = (productCategoryTitleElement != null) ? productCategoryTitleElement.getTextContent().trim() : "";
 
@@ -77,7 +75,6 @@ public class dataCollector {
                                 List<HtmlElement> subnavItemsDivs = subnavCol.getByXPath(".//div[contains(@class, 'subnav-items')]");
 
                                 for (HtmlElement subnavItemsDiv : subnavItemsDivs) {
-                                    // Access other properties or perform actions with subnavItemsDiv
                                     String subnavItemsText = subnavItemsDiv.getTextContent().trim();
                                     subnavItemsTextList.add(subnavItemsText);
                                 }
@@ -90,17 +87,16 @@ public class dataCollector {
 
                         currentMenuItem.setSubnavItemsList(subnavItemsList);
                     }
-
-                    menuObjects.add(currentMenuItem);
                 }
 
+//                menuObjects.add(currentMenuItem);
+//            }
 
-            }
-
-            System.out.println("testing");
-            return new ResponseEntity<>(menuObjects, HttpStatus.CREATED);
+//            System.out.println("testing");
+            return new ResponseEntity<>(currentMenuItem, HttpStatus.CREATED);
         }catch (Exception e){
             System.out.println(e.getMessage());
+            List<MenuItem> menuObjects = new ArrayList<>();
             return new ResponseEntity<>("Oops!!! Some Error Occured", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
