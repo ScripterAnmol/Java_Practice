@@ -1,19 +1,22 @@
 package com.example.question3.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Decision {
     private Binder binder;
     private Applicant applicant;
-    private Classifications classifications;
+    private List<Classification> classifications;
     private Trademark trademark;
 
     public Decision(){
         this.binder = new Binder();
         this.applicant = new Applicant();
-        this.classifications = new Classifications();
         this.trademark = new Trademark();
+        this.classifications = new ArrayList<>();
     }
 
-    public Decision(Binder binder, Applicant applicant, Classifications classifications, Trademark trademark) {
+    public Decision(Binder binder, Applicant applicant, List<Classification> classifications, Trademark trademark) {
         this.binder = binder;
         this.applicant = applicant;
         this.classifications = classifications;
@@ -36,11 +39,11 @@ public class Decision {
         this.applicant = applicant;
     }
 
-    public Classifications getClassifications() {
+    public List<Classification> getClassifications() {
         return classifications;
     }
 
-    public void setClassifications(Classifications classifications) {
+    public void setClassifications(List<Classification> classifications) {
         this.classifications = classifications;
     }
 
@@ -50,5 +53,9 @@ public class Decision {
 
     public void setTrademark(Trademark trademark) {
         this.trademark = trademark;
+    }
+
+    public void addClassification(Classification newClassification) {
+        classifications.add(newClassification);
     }
 }

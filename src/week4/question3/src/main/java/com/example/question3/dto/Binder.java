@@ -6,6 +6,7 @@ public class Binder{
     private String fa;
     private String fafd;
     private int applicationNo;
+    private String redParty;
 
 
     public Binder() {
@@ -14,14 +15,16 @@ public class Binder{
         this.fa="";
         this.fafd="";
         this.applicationNo=0;
+        this.redParty="";
     }
 
-    public Binder(int id, String domains, String fa, String fafd, int applicationNo) {
+    public Binder(int id, String domains, String fa, String fafd, int applicationNo, String redParty) {
         this.id = id;
         this.domains = domains;
         this.fa = fa;
         this.fafd = fafd;
         this.applicationNo = applicationNo;
+        this.redParty = redParty;
     }
 
     public int getApplicationNo() {
@@ -62,5 +65,13 @@ public class Binder{
 
     public void setFafd(String fafd) {
         this.fafd = fafd;
+    }
+
+    public String getRedParty() {
+        return redParty;
+    }
+
+    public void setRedParty(String redParty) {
+        this.redParty = redParty;
     }
 }

@@ -18,32 +18,21 @@ public class SearchResults{
         this.page = page;
     }
 
-    public Decision getFirstCase(){
+    public HtmlPage getFirstCase(){
         try{
-            Decision res= new Decision();
 //            sorting chronologically
             HtmlAnchor caseNumberChronology = page.getFirstByXPath("//a[contains(text(),'Case Number')]");
             caseNumberChronology.click();
-            Thread.sleep(10000);
+            Thread.sleep(30000);
 
 //            clicking on first case
             HtmlAnchor firstCase = (HtmlAnchor) page.getFirstByXPath("//table[@id='MainContent_ctrlTMSearch_ctrlProcList_gvwIPCases']/tbody/tr[2]/td[2]/a");
-            HtmlPage newPage  = firstCase.click();
-//            HtmlPage newPage  = client.getCurrentWindow().getEnclosedPage();
-            Thread.sleep(20000);
-
-
-            res.getBinder().setDomains("TM");
-            res.getBinder().setFa("opposition");
-            res.getBinder().setApplicationNo(0);
-            this.page = newPage;
-            this.client.setCurrentWindow(newPage.getEnclosingWindow());
-
+            firstCase.click();
+            Thread.sleep(30000);
+            HtmlPage newPage  = (HtmlPage) client.getCurrentWindow().getEnclosedPage();
 
             System.out.println("done");
-
-
-            return res;
+            return newPage;
         }catch (Exception e){
             System.out.println(e.getMessage());
             return null;

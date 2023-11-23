@@ -43,7 +43,7 @@ public class Homepage{
             HtmlTableBody tbody = page.getFirstByXPath(tbodyXPath);
 
             if (tbody != null) {
-                for (HtmlTableRow row : tbody.getRows()) {
+                for (HtmlTableRow row : tbody.getRows()){
                     if (row.getCells().size() >= 3) {
                         HtmlTableCell secondTd = row.getCell(1);
                         HtmlTableCell thirdTd = row.getCell(2);
@@ -59,9 +59,7 @@ public class Homepage{
                                 HtmlTableDataCell firstTd = (HtmlTableDataCell) row.getCell(0);
                                 HtmlCheckBoxInput checkbox = firstTd.getFirstByXPath(".//input[@type='checkbox']");
                                 if (checkbox != null) {
-                                    System.out.println("hit");
                                     checkbox.setChecked(true);
-                                    System.out.println("hit");
                                 }
                             }
                         }
@@ -76,13 +74,12 @@ public class Homepage{
                 System.err.println("Anchor with id MainContent_ctrlTMSearch_ctrlCaseStatusSearchDialog_lnkBtnSelect not found");
             }
 
-            System.out.println("done");
-            Thread.sleep(5000);
+            Thread.sleep(30000);
 
             HtmlAnchor searchButtonAnchor = (HtmlAnchor) page.getElementById("MainContent_ctrlTMSearch_lnkbtnSearch");
             if (searchButtonAnchor != null) {
                 searchButtonAnchor.click();
-                Thread.sleep(10000);
+                Thread.sleep(50000);
                 return page;
             } else {
                 System.err.println("Anchor with id MainContent_ctrlTMSearch_lnkbtnSearch not found");
