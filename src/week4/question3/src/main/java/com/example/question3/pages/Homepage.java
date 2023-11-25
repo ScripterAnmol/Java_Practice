@@ -3,14 +3,18 @@ package com.example.question3.pages;
 import com.example.question3.model.CaseStatus;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Homepage{
-    protected WebClient client;
+//    @Autowired
+    private WebClient client;
     protected HtmlPage page;
 
     public Homepage(){
         this.page=null;
+        this.client=null;
     }
 
     public Homepage(WebClient client,HtmlPage page){

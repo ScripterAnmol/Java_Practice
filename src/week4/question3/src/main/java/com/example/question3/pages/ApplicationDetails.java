@@ -6,18 +6,29 @@ import com.example.question3.services.FileSavingService;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ApplicationDetails{
+
+//    @Autowired
     private WebClient client;
     private HtmlPage page;
     private FileSavingService fileSavingService;
 
 
     public ApplicationDetails(){
+        this.client=null;
         this.page=null;
+        this.fileSavingService=null;
     }
+
+//    public ApplicationDetails(HtmlPage page, FileSavingService fileSavingService){
+//        this.page = page;
+//        this.fileSavingService = fileSavingService;
+//    }
 
     public ApplicationDetails(WebClient client, HtmlPage page, FileSavingService fileSavingService){
         this.client = client;
@@ -25,13 +36,21 @@ public class ApplicationDetails{
         this.fileSavingService = fileSavingService;
     }
 
+    public int getApplicationNumber(){
+        //     int applicationNumber = Integer.parseInt(page.getElementById("MainContent_ctrlTM_txtAppNr").getTextContent());
 
+//        HtmlTableCell applicationNumberCell = (HtmlTableCell) page.getFirstByXPath("//*[@id='MainContent_tabBiblio']/div[1]//tbody/tr/td[normalize-space()='Application Number']/following-sibling::td");
+        HtmlSpan applicationNumberCell = page.getFirstByXPath("//span[contains(@id,'txtAppNr')]");
+        //     Getting Application Number
+        int applicationNumber = Integer.parseInt(applicationNumberCell.getTextContent().trim());
+        return applicationNumber;
+    }
     public Decision getDecision(){
         try{
             Decision res= new Decision();
 
-//            Getting Application Number
-            int applicationNumber = Integer.parseInt(page.getElementById("MainContent_ctrlTM_txtAppNr").getTextContent());
+            int applicationNumber = getApplicationNumber();
+
             String redParty="";
             String fafd="";
 
@@ -44,7 +63,9 @@ public class ApplicationDetails{
             String trademarkImage = "";
 
 // Getting Applicant Details
-            String applicantTableBodyXPath = "//table[@id='MainContent_ctrlTM_ctrlApplicant_ctrlApplicant_gvCustomers']/tbody";
+//            String applicantTableBodyXPath = "//table[@id='MainContent_ctrlTM_ctrlApplicant_ctrlApplicant_gvCustomers']/tbody";
+
+            String applicantTableBodyXPath = "//table[contains(@id, 'ctrlApplicant_ctrlApplicant_gvCustomers')]/tbody";
             HtmlTableBody applicantTableBody = page.getFirstByXPath(applicantTableBodyXPath);
 
             if (applicantTableBody != null) {
@@ -66,7 +87,8 @@ public class ApplicationDetails{
             }
 
 // Getting Trademark Info
-            String tableXPath = "//*[@id='MainContent_ctrlTM_ctl30']/div/table/tbody";
+//            String tableXPath = "//*[@id='MainContent_ctrlTM_ctl30']/div/table/tbody";
+            String tableXPath = "//div[contains(@id,'tblMarkInfo')]//table[@class='alternated']/tbody";
             HtmlTableBody tableBody = page.getFirstByXPath(tableXPath);
 
             if (tableBody != null) {
@@ -100,7 +122,9 @@ public class ApplicationDetails{
             }
 
 // Getting Classification Info
-            HtmlTableBody classificationTbody = page.getFirstByXPath("//*[@id='MainContent_ctrlTM_tblClass']/table/tbody");
+//            HtmlTableBody classificationTbody = page.getFirstByXPath("//*[@id='MainContent_ctrlTM_tblClass']/table/tbody");
+            HtmlTableBody classificationTbody = page.getFirstByXPath("//div[contains(@id,'tblClass')]//table/tbody");
+
             if (classificationTbody != null) {
                 for (HtmlTableRow row : classificationTbody.getRows()) {
                     HtmlTableCell firstCell = row.getCell(0);

@@ -3,10 +3,15 @@ package com.example.question3.pages;
 import com.example.question3.dto.Decision;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+@Component
 public class SearchResults{
+
+//    @Autowired
     private WebClient client;
     private HtmlPage page;
     private int totalCase = 0;
@@ -20,6 +25,14 @@ public class SearchResults{
         this.casePerPage = 0;
         this.totalPage = 0;
     }
+
+
+//    public SearchResults(HtmlPage page){
+//        this.page = page;
+//        this.totalCase = getTotalCase();
+//        this.casePerPage = getCasePerPage();
+//        this.totalPage = getTotalPage(this.totalCase,this.casePerPage);
+//    }
 
     public SearchResults(WebClient client,HtmlPage page){
         this.client = client;
@@ -169,6 +182,7 @@ public class SearchResults{
             currentCase.click();
             Thread.sleep(30000);
             HtmlPage newPage  = (HtmlPage) client.getCurrentWindow().getEnclosedPage();
+            client.getCurrentWindow().getHistory().back();
 
             System.out.println("done");
             return newPage;

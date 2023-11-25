@@ -84,6 +84,7 @@ public class DataCrawlerService {
 
 
             int totalResultPage = searchResults.getTotalPage();
+
             for(int i=1;i<=totalResultPage;i++){
                 int currentPageTotalCase = searchResults.getTotalCaseOnCurrentPage();
                 for(int j=1;j<=currentPageTotalCase;j++){
@@ -99,7 +100,10 @@ public class DataCrawlerService {
 
                     String referenceDocumentName = "decision_reference_document_"+decision.getBinder().getApplicationNo()+"_"+dateFormat.format(new Date());
                     fileSavingService.saveObjectToFile(decision,jsFilename,fileLocation);
-                    fileSavingService.downloadFile(decisionReferenceDocument,referenceDocumentName,fileLocation);
+
+                    if(decisionReferenceDocument!=null){
+                        fileSavingService.downloadFile(decisionReferenceDocument,referenceDocumentName,fileLocation);
+                    }
 
                     res.addDecision(decision);
                 }
