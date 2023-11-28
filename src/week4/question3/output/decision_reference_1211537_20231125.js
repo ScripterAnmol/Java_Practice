@@ -1,0 +1,30 @@
+{
+  "binder" : {
+    "id" : 0,
+    "domains" : "TM",
+    "fa" : "opposition",
+    "fafd" : "",
+    "applicationNo" : 1211537,
+    "redParty" : "Apple Inc."
+  },
+  "applicant" : {
+    "id" : 1215585,
+    "name" : "Samsung Electronics Co., Ltd.",
+    "address" : "Physical : 129, Samsung-ro Yeongtong-gu Suwon-si Gyeonggi-do  (KR)Postal : 129, Samsung-ro Yeongtong-gu Suwon-si Gyeonggi-do  (KR)"
+  },
+  "classifications" : [ {
+    "classId" : 9,
+    "description" : "Televisions; keyboards for smart TVs; software for smart TVs (application) for entertainment purposes; operating software for smart TVs (application); downloadable application software for searching, browsing, reviewing, sampling, playing, purchasing and downloading entertainment content on smart TVs; downloadable application software for use in distribution and viewing of audio, video, and audiovisual elements and information relating to content in the field of entertainment; computer software for distributing / monitoring contents on the Internet; computer programs for searching the contents of computers and computer networks by remote control; computer software for streaming audiovisual and multimedia content via the internet and global communications networks, and for searching, organizing, recommending, purchasing, accessing, and viewing music, movies, television shows and multimedia entertainment content; computer software for use in recording, organizing, transmitting, manipulating, and reviewing text, data, audio files, video files and electronic games in connection with TV, computers, tablets, music players, video players, media players, mobile phones, and portable and handheld digital electronic devices; downloadable computer software for searching, browsing, reviewing, sampling, playing, purchasing and downloading entertainment content on smart TVs."
+  }, {
+    "classId" : 38,
+    "description" : "Telecommunication and interactive telecommunications services; broadcasting, streaming, transmission and reception of motion picture films, television programs, radio, cable television, music, television content, images, messages, information, computer programmes and signals; interactive television transmission and programming services."
+  }, {
+    "classId" : 41,
+    "description" : "Entertainment and amusement information provided online via the Internet; distribution (other than transportation) of television programmes; distribution of television programs for others; providing of videos for educational purposes; providing of videos for entertainment purposes; providing of videos for amusement purposes; providing audio content for educational purposes via the communication network and Internet; providing audio content for entertainment purposes via the communication network and Internet; providing audio content for amusement purposes via the communication network and Internet; interactive entertainment; television program guide services; entertainment services provided by television; provision of information relating to television programmes; services for the production of entertainment in the form of television."
+  } ],
+  "trademark" : {
+    "name" : "Entertainment HUB",
+    "type" : "Combined",
+    "image" : "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"
+  }
+}

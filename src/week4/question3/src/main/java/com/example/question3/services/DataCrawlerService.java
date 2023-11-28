@@ -24,8 +24,8 @@ public class DataCrawlerService {
         this.client=client;
         this.fileSavingService = fileSavingService;
 
-//        this.client.getOptions().setJavaScriptEnabled(false);
-//        this.client.getOptions().setCssEnabled(false);
+        this.client.getOptions().setJavaScriptEnabled(true);
+        this.client.getOptions().setCssEnabled(true);
     }
 
     public Decision getFirstTrademarkCase(){
@@ -78,14 +78,12 @@ public class DataCrawlerService {
 
             searchResults.sortChronologically();
 
-            System.out.println(searchResults.getCasePerPage());
-            System.out.println(searchResults.getTotalCase());
-            System.out.println(searchResults.getTotalPage());
+            for(int j=1;j<5;j++){
+                searchResults.nextPage();
+                Thread.sleep(30000);
+            }
 
-
-            int totalResultPage = searchResults.getTotalPage();
-
-            for(int i=1;i<=totalResultPage;i++){
+            do{
                 int currentPageTotalCase = searchResults.getTotalCaseOnCurrentPage();
                 for(int j=1;j<=currentPageTotalCase;j++){
 
@@ -106,13 +104,9 @@ public class DataCrawlerService {
                     }
 
                     res.addDecision(decision);
+                    client.getCurrentWindow().getHistory().back();
                 }
-
-                if (i < totalResultPage) {
-                    searchResults.nextPage(i);
-                    Thread.sleep(15000);
-                }
-            }
+            }while(searchResults.nextPage());
 
             return res;
         }catch(Exception e){

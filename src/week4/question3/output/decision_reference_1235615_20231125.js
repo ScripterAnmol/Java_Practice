@@ -1,0 +1,33 @@
+{
+  "binder" : {
+    "id" : 0,
+    "domains" : "TM",
+    "fa" : "opposition",
+    "fafd" : "19 Jul 2023",
+    "applicationNo" : 1235615,
+    "redParty" : "SUNNYA PTY. LTD."
+  },
+  "applicant" : {
+    "id" : 3883356,
+    "name" : "Handan Bikenxin Trade Co., Ltd",
+    "address" : "Postal : 17-1-1904, Capital of Anju Dongcheng No. 139, Congtai North Road Congtai District Handan City, Hebei Province  (CN)Physical : 17-1-1904, Capital of Anju Dongcheng No. 139, Congtai North Road Congtai District Handan City, Hebei Province  (CN)"
+  },
+  "classifications" : [ {
+    "classId" : 5,
+    "description" : "Powdered milk for babies; infant formula; liquid formula milk for babies; food for infants; food for infants, namely, human breast milk; lacteal flour for babies; medicated supplements for foodstuffs for babies; baby vitamins; menthol vapor bath preparations for babies; medicated shampoos for babies; medicated baby oils; mosquito-repellent patches for babies; babies' napkins; babies' diaper-pants; probiotic supplements; protein supplements; DHA algae oil dietary supplements; calcium supplements; dietary and nutritional supplements; vitamin and mineral supplements."
+  }, {
+    "classId" : 29,
+    "description" : "Powdered milk; powdered goat milk; milk powder for nutritional purposes; dried milk for food; powdered milk for middle-aged people and elderly people; powdered milk for pregnant and nursing women; beverages made from milk; milk products excluding ice cream, ice milk and frozen yoghurt; milk; whey; cream; butter; cheese; powdered soya milk; coconut milk; yogurt; non-dairy creamer; seaweed extracts for food; fruit-based organic food snacks; nut-based snack foods."
+  }, {
+    "classId" : 30,
+    "description" : "Coffee beverages with milk; chocolate-based beverages with milk; tea-based beverages with milk; tea; dessert puddings containing milk; sugar; cakes; fruit vinegar; seaweed for use as a condiment; yeast powder."
+  }, {
+    "classId" : 35,
+    "description" : "Advertising services; presentation of goods on communication media, for retail purposes; organizing, promoting and conducting exhibitions, tradeshows and events for business purposes; marketing; promotion of goods through influencers; import-export agency services; providing incentive award programs for customers through issuance and processing of loyalty points for on-line purchase of a company's goods and services; providing purchase advisory and consulting services to consumers for the purchase of powdered milk and powdered milk for babies; wholesale and retail store services namely for pharmaceutical, veterinary and sanitary preparations, medical supplies, powdered milk and powdered milk for babies; on-line wholesale and retail store services namely for pharmaceutical, veterinary and sanitary preparations, medical supplies, powdered milk and powdered milk for babies."
+  } ],
+  "trademark" : {
+    "name" : "纽瑞优 NIURUIYOU",
+    "type" : "Combined",
+    "image" : "/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAB4AHgDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6poAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKACgAoAKAOf8AHPi/SfBOhNq/iCaSGxWRYi0cZc7mzjgc9qAKOp/ELQdN1rw9pV3LcLfa6qvZRiBjuDY+8R93rzmgDNn+LXhyHxDLoTwa4dYjVnNomk3DSFFzl1AXleOCOD2oAv8Ag/4keHPF76nFoVxczXOnLvuLeS0kikAyw4VgCTlWGBzkYoAqaB8VfDuveIX0PTY9YfU4mCzwvpc6G3z3lyvyD3bFAEulfE/w1qnhrXNdtLi5On6M7JeM1uyshUZOFPJ4PagBbn4oeF7XwLB4uub2WHRp3MUTPA4kdgzKQExu/hY/QZ6UAUNT+MHhzS309NSttctZNQx9kSXS5labJUfKMZ6uo/4EPWgDY8R/EXwz4d0yW71bU4oZIhGZLMENdJvxgGEHeD8wJGOBzQBXX4peDP8AhHP7ak8Q6fFa+SZ/LkmUTYx08rO7d/s4znigDT8CeMdJ8caIdW8PyTy2IlaEPLC0W5lAzgN1HPUd8jtQB0VABQAUAFAHgn7Zc5T4badbg/LPqI3D1CwysP1AoAzfF6+d+038OLA/csdPQge5S4J/9FigCtdeKNBt/wBrE6nca3psWnR6Ubd7p7lBEsoBBQsTgMDxjrQBb+BuoWNx8cfilqNpdW8mnSbZluY3BiZN5JcMOCODz9aAKvwd8Q6O37RHxBnTVbFodSKpZOLhcXTbhxGc/OfpmgCjqWgWnhHwf4jjubbx5p/h6/dptRjW80eQMXIU92cdh8tACWPhS38T/D/StLtbTx9deGD/AKVZwm80eP7247uSH53twfWgDX/aLXZ46+FKlWQrcAbXIJH+kWvBxxn6UAdH+1k9vZfCa6mEEP2ia9t1DbBuOH3devRaAKHxDv7v4d/s+aBfaHHaR6jbQWVuZJbZJNwMYDZBHWgD2bwvIZ/DelzuEEk1rFI+xQoLMoJIA4HJoA06ACgAoAKAOE+LXhrSvEumafDrOjaxq0cNwZI49MlWN422MN7EuvGOOCeSOOpoA8u0rw5r8Hx90/xO3hzxNNocNqLVZb2eGWZHZWXccy52De3TJ64BzQBceKP/AIbDRDGm3+xc42jH3TQA34LIo/aD+KqhQF3qMY4++aAE+EEaf8NHfFAbFwoXbx0+YdKAPKPCmjaXceC47yfTbKW7PxAgtDM8ClzCQpMe7GdhP8PSgC38UvD2j2/hD4j3tvpdlDdWXipYbeWOFVaKNowCgwPu8k46Z5680AegftDEnxr8JiSSTOvJ/wCvi0oAu/tlTZ8FaDZqcyXGottTPLEQSKP1cUAaH7WEIt/gd5I4EdzbJ+WRQB654Q/5FPRP+vGD/wBFigDWoAKACgAoA5Xx2llctpFjqLarHDc3JXz9PvpLUxEIcGRo2VihOFxzywJHGQAYen+GtJhtNE1WO68U7rqWBkim1+7cKW+YB1MhVgO4OQaAM7WvAXhWLxPqmsSw64dYgt45mvItZuUkKSu6+WrCQFVG0/KMDBAFAFHXfA/hHwlqz3dvFrcd9fwyz3FxF4guYZrgRlBtz5mZHJcbVzyRQBuaZ8PfDHhvxdBqOnQ6wmq3iSTy3DarcMZvL2nEoZzvzuHDZHFAFfTfAXhC18PaFDbaZdpaX+qw6uiG7clLryiyuxzyAFxt6Z5oAdr3gzwpqd/qfhrUNNuZW1q9Gq3CC7ZfM2phphg5Cq21Co7snrQBP4v0PQNf13SrjVtLup4tAu4raK6S5aPypnaJl+QH513eTknoexwSACLxp4O8Kaj4nutZ13Tb3UL7TbeO/QPfS+UMMcIsW7YBmIEjGCeueaAMH9r7n4OTgdft0H8zQB6n4LkSXwfobxOro1jAVZTkEeWvINAGxQAUAFABQBS1HTLXUSn2uMyKqum3PBV12sCO/FAEVvotpBpmnWCCUwWHl+TvkZm/djC7mPLe5PWgBmpaDZ6heLcTmZW2okixyFVmVG3qrjuAxJ/Eg5BIoAdq2h2WquHvEdnWF4VZXKlQzI2RjowaNCGHII4oAdq2kQakITLJcRSxbgssEhR8MMMMjsR+oBGCAaAJG0y1MVjEseyOydXgVSQF2qVA9xgmgCVrKFtQjvSG89ImhU542sVJ4+qigCjP4fsptRN24l+aVJ5IRIRHJKgAR2XuRtX/AL5UnkDAAuq6FZ6lcLNcGYEoIpFjkKrMgbcEcdxn+ZHQkEAb4q8OaX4q0WbStdtRc2UpDFNxUhgchgwIIIPcGgCDwb4T0zwfpZ07RBdJZA5SKe6knEfGMJvJ2j2HFAG9QAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAFABQAUAf/9k="
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "binder" : {
+    "id" : 0,
+    "domains" : "TM",
+    "fa" : "opposition",
+    "fafd" : "30 Sep 2022",
+    "applicationNo" : 1215599,
+    "redParty" : "INNERSHINE NUTRACEUTICALS LIMITED"
+  },
+  "applicant" : {
+    "id" : 3726713,
+    "name" : "IAMMI LIMITED",
+    "address" : "Physical : Mimi Gilmour 26 Norwich Street Eden Terrace Auckland 1021 (NZ)Service : Mimi Gilmour 26 Norwich Street Eden Terrace Auckland 1021 (NZ)"
+  },
+  "classifications" : [ {
+    "classId" : 3,
+    "description" : "Skincare cosmetics; cosmetics; skin care preparations; moisturisers; soaps; essential oils; shampoo; perfumery; body creams; shower gels; hair lotions; skin care lotions; lip balm; lipsticks; toothpaste; sunscreen; functional cosmetics being skin care preparations; laundry detergent; laundry preparations; cleaning preparations; laundry additives; bleaching preparations and other substances for laundry use; essential oils as perfume for laundry purposes; household cleaning products; household cleaning preparations; massage candles for cosmetic purposes; scented room sprays; scented body lotions; incense; scented oils; scented linen sprays; fragrances; scented oils used to produce aromas when heated; fragrance refills for reed diffusers; perfume oils; rose-scented body mist sprays; aromatherapy oils; room fragrances; air fragrance reed diffusers; deodorants for personal use."
+  }, {
+    "classId" : 9,
+    "description" : "Downloadable computer software applications for providing a user with information, education, and guidance in relation to cosmetics, beauty, wellness, health and skincare; software for mobile phones for providing cosmetics, beauty, wellness, health and skincare information to a user; teaching and instructional apparatus; downloadable electronic publications; downloadable electronic books; downloadable podcasts; video recordings; educational software; computer e-commerce software to allow users to perform electronic business transactions via a global computer network."
+  }, {
+    "classId" : 16,
+    "description" : "Printed instructional, educational, and teaching materials; books; printed publications; printed matter; stationery; cards; educational books; children's books; instructional and teaching materials."
+  }, {
+    "classId" : 41,
+    "description" : "Life coaching [training]; training or education services in the field of life coaching; educational services; personal development training; coaching [training]; career counselling [education or training advice]; conducting of seminars; business education; conducting of educational courses; health education; arranging and conducting of workshops; adult education; production of video podcasts; providing online instructional videos, not downloadable; providing non-downloadable instructional videos via a website; providing online educational classes via a live video chat; teaching of beauty skills; production of podcasts; conducting workshops and seminars in personal awareness."
+  }, {
+    "classId" : 44,
+    "description" : "Lifestyle counselling; counselling in the field of mental health and wellness; consultancy in the field of body and beauty care; consultancy relating to nutrition; providing mental health and wellness information; health counselling; body skin care treatments; health and beauty care; skincare and health counselling; therapeutic services; therapy services; providing skincare and health information via electronic means; providing information in the fields of health and wellness; providing skincare and health information via a global computer network; consultancy in the field of cosmetics; meditation therapy services; cosmetic analysis services for determining the most appropriate cosmetics to be used with a person's face shape and skin tone; consultancy relating to beauty care; providing information about beauty; medical, hygienic and beauty care services."
+  }, {
+    "classId" : 45,
+    "description" : "Counselling in the field of personal development, namely, self-improvement, self-fulfilment, and interpersonal communication; personal growth and motivation consulting services; providing information via a web site in the fields of personal relationships, personal growth and motivation, and self-fulfilment; providing information in the field of personal development, namely, personal improvement."
+  } ],
+  "trademark" : {
+    "name" : "I AM MI",
+    "type" : "Combined",
+    "image" : "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"
+  }
+}

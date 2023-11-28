@@ -1,0 +1,24 @@
+{
+  "binder" : {
+    "id" : 0,
+    "domains" : "TM",
+    "fa" : "opposition",
+    "fafd" : "16 Oct 2023",
+    "applicationNo" : 1240605,
+    "redParty" : "ara AG"
+  },
+  "applicant" : {
+    "id" : 3894179,
+    "name" : "JNJ WORLD TRADING LIMITED",
+    "address" : "Physical : HYUN JEONG LEE 6 Tendril Court  Orewa 0931 (NZ)Postal : 6 Tendril Court   Orewa 0931 (NZ)Service : HYUN JEONG LEE 6 Tendril Court  Orewa 0931 (NZ)"
+  },
+  "classifications" : [ {
+    "classId" : 25,
+    "description" : "Shoes; slipper shoes; leather shoes; rubber shoes; casual shoes; dress shoes; work shoes; canvas shoes; waterproof shoes; golf shoes; rain shoes; shoes for children; school shoes."
+  } ],
+  "trademark" : {
+    "name" : "AraToa",
+    "type" : "Combined",
+    "image" : "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"
+  }
+}

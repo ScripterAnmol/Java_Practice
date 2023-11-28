@@ -14,16 +14,18 @@ public class SearchResults{
 //    @Autowired
     private WebClient client;
     private HtmlPage page;
-    private int totalCase = 0;
-    private int casePerPage = 0;
-    private int totalPage = 0;
+//    private int totalCase = 0;
+//    private int casePerPage = 0;
+//    private int totalPage = 0;
+
+    private int curSearchResultPage = 1;
 
     public SearchResults(){
         this.client=null;
         this.page=null;
-        this.totalCase = 0;
-        this.casePerPage = 0;
-        this.totalPage = 0;
+//        this.totalCase = 0;
+//        this.casePerPage = 0;
+//        this.totalPage = 0;
     }
 
 
@@ -37,9 +39,9 @@ public class SearchResults{
     public SearchResults(WebClient client,HtmlPage page){
         this.client = client;
         this.page = page;
-        this.totalCase = getTotalCase();
-        this.casePerPage = getCasePerPage();
-        this.totalPage = getTotalPage(this.totalCase,this.casePerPage);
+//        this.totalCase = getTotalCase();
+//        this.casePerPage = getCasePerPage();
+//        this.totalPage = getTotalPage(this.totalCase,this.casePerPage);
     }
 
     public WebClient getClient() {
@@ -58,21 +60,21 @@ public class SearchResults{
         this.page = page;
     }
 
-    public void setTotalCase(int totalCase) {
-        this.totalCase = totalCase;
-    }
-
-    public void setCasePerPage(int casePerPage) {
-        this.casePerPage = casePerPage;
-    }
-
-    public int getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
-    }
+//    public void setTotalCase(int totalCase) {
+//        this.totalCase = totalCase;
+//    }
+//
+//    public void setCasePerPage(int casePerPage) {
+//        this.casePerPage = casePerPage;
+//    }
+//
+//    public int getTotalPage() {
+//        return totalPage;
+//    }
+//
+//    public void setTotalPage(int totalPage) {
+//        this.totalPage = totalPage;
+//    }
 
     public int getTotalCase(){
         int totalCase=0;
@@ -182,7 +184,6 @@ public class SearchResults{
             currentCase.click();
             Thread.sleep(30000);
             HtmlPage newPage  = (HtmlPage) client.getCurrentWindow().getEnclosedPage();
-            client.getCurrentWindow().getHistory().back();
 
             System.out.println("done");
             return newPage;
@@ -193,7 +194,9 @@ public class SearchResults{
         }
     }
 
-    public void nextPage(int curPage) {
+//    public void nextPage(int curPage) {
+    public boolean nextPage(){
+        boolean hasNext=false;
         try{
             String casesTableXpath = "//table[@id='MainContent_ctrlTMSearch_ctrlProcList_gvwIPCases']/tbody/tr[last()]/td/table/tbody";
             HtmlTableBody tableBody = page.getFirstByXPath(casesTableXpath);
@@ -203,26 +206,38 @@ public class SearchResults{
                 for (HtmlTableRow row : rowIterable) {
                     Iterable<HtmlTableCell> cells = row.getCells();
                     for (HtmlTableCell cell : cells) {
-                        if (cell.getTextContent().trim().equals(Integer.toString(curPage))) {
+                        if (cell.getTextContent().trim().equals(Integer.toString(curSearchResultPage))){
                             DomElement nextCell = cell.getNextElementSibling();
                             if (nextCell != null) {
                                 HtmlAnchor anchor = nextCell.getFirstByXPath(".//a");
                                 if (anchor != null) {
                                     anchor.click();
-                                    System.out.println("Clicked on the anchor element in the next td " + curPage);
+                                    Thread.sleep(30000);
+                                    this.page = (HtmlPage) client.getCurrentWindow().getEnclosedPage();
+                                    hasNext=true;
+                                    System.out.println("Clicked on the anchor element in the next td " + curSearchResultPage);
                                 } else {
-                                    System.err.println("Anchor element not found in the next td " + curPage);
+                                    hasNext=false;
+                                    System.err.println("Anchor element not found in the next td " + curSearchResultPage);
                                 }
                             } else {
+                                hasNext=false;
                                 System.err.println("Next td not found");
                             }
                             break;
+                        }else{
+                            hasNext=false;
                         }
                     }
                 }
             }
+
+            curSearchResultPage++;
+
+            return hasNext;
         }catch (Exception e){
             System.out.println(e.getMessage());
+            return false;
         }
 
     }

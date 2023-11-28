@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Homepage{
-//    @Autowired
     private WebClient client;
     protected HtmlPage page;
 

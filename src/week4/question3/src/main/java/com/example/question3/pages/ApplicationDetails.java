@@ -8,6 +8,7 @@ import com.gargoylesoftware.htmlunit.html.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -45,13 +46,167 @@ public class ApplicationDetails{
         int applicationNumber = Integer.parseInt(applicationNumberCell.getTextContent().trim());
         return applicationNumber;
     }
+
+    public String getRedPartyName(){
+        try{
+            String redParty="";
+            boolean hasNext= false;
+            int redPartyCurPage=1;
+
+            do{
+                String linkedCasesTbodyXpath = "//*[@id='MainContent_ctrlProcedureList_gvwIPCases']/tbody";
+                HtmlTableBody linkedCasesTbody = page.getFirstByXPath(linkedCasesTbodyXpath);
+                if(linkedCasesTbody != null){
+                    List<HtmlTableRow> rows = linkedCasesTbody.getRows();
+
+                    for (int i = 1; i < rows.size(); i++) {
+                        HtmlTableRow row = rows.get(i);
+                        if (row.getAttribute("class").contains("gridview_pager")) {
+                            continue;
+                        }
+
+                        HtmlTableCell secondCell = row.getCell(1);
+                        if (secondCell != null && secondCell.getTextContent().trim().startsWith("Proceedings")) {
+                            HtmlTableCell lastCell = row.getCell(row.getCells().size() - 1);
+                            redParty = lastCell.getTextContent().trim();
+                            System.out.println(redParty);
+                        }
+                    }
+
+//                    Code for finding the next sibling for page change
+                    String pagerCellsXpath = "//*[@id='MainContent_ctrlProcedureList_gvwIPCases']/tbody/tr[contains(@class, 'gridview_pager')]/td[1]/table/tbody/tr/td";
+                    List<HtmlTableCell> pagerCells = page.getByXPath(pagerCellsXpath);
+
+                    if (pagerCells != null && !pagerCells.isEmpty()) {
+                        for (HtmlTableCell cell : pagerCells) {
+                            DomElement nextSibling = cell.getNextElementSibling();
+                            if (cell != null && Integer.parseInt(cell.getTextContent().trim()) == redPartyCurPage && nextSibling != null) {
+                                HtmlAnchor anchor = nextSibling.getFirstByXPath(".//a");
+                                if (anchor != null) {
+                                    anchor.click();
+                                    Thread.sleep(30000);
+                                    this.page = (HtmlPage) client.getCurrentWindow().getEnclosedPage();
+                                    redPartyCurPage++;
+                                    hasNext=true;
+                                }else{
+                                    hasNext=false;
+                                }
+                                break;
+                            }else{
+                                hasNext=false;
+                            }
+                        }
+                    }else{
+                        hasNext=false;
+                    }
+                }else{
+                    System.err.println("Element not found");
+                    hasNext=false;
+                }
+
+            }while(hasNext);
+
+            return redParty;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return "";
+        }
+    }
+
+    public List<Classification> getClassifications(){
+        List<Classification> classifications = new ArrayList<>();
+// Getting Classification Info
+//            HtmlTableBody classificationTbody = page.getFirstByXPath("//*[@id='MainContent_ctrlTM_tblClass']/table/tbody");
+        try{
+            boolean hasNext = false;
+            int curClassificationPage = 1;
+            do{
+                HtmlTableBody classificationTbody = page.getFirstByXPath("//div[contains(@id,'tblClass')]//table/tbody");
+
+                if (classificationTbody != null) {
+                    for (HtmlTableRow row : classificationTbody.getRows()) {
+                        HtmlTableCell firstCell = row.getCell(0);
+                        if (firstCell != null && "Goods & Services Specification".equals(firstCell.getTextContent().trim())) {
+                            HtmlTableCell secondCell = row.getCell(1);
+                            if(secondCell != null){
+                                HtmlTableBody innerTableBody = secondCell.getFirstByXPath(".//table/tbody");
+                                if (innerTableBody != null){
+                                    for (HtmlTableRow innerRow : innerTableBody.getRows()) {
+                                        if (innerRow.getFirstByXPath(".//th") != null) {
+                                            continue;
+                                        }
+                                        if (innerRow.getAttribute("class").contains("gridview_pager")) {
+                                            continue;
+                                        }
+
+                                        Classification newClassification = new Classification();
+                                        int i=0;
+                                        for (HtmlTableCell innerCell : innerRow.getCells()){
+                                            if(i==0){
+                                                newClassification.setClassId(Integer.parseInt(innerCell.getTextContent().trim()));
+                                            }else{
+                                                newClassification.setDescription(innerCell.getTextContent().trim());
+                                            }
+                                            i++;
+                                        }
+
+                                        classifications.add(newClassification);
+                                    }
+
+//                                  Code for finding the next sibling for page change
+                                    String pagerCellsXpath = ".//table/tbody/tr[contains(@class, 'gridview_pager')]/td[1]/table/tbody/tr/td";
+                                    List<HtmlTableCell> pagerCells = secondCell.getByXPath(pagerCellsXpath);
+
+                                    if (pagerCells != null && !pagerCells.isEmpty()){
+                                        for (HtmlTableCell cell : pagerCells) {
+                                            DomElement nextSibling = cell.getNextElementSibling();
+                                            if (cell != null && Integer.parseInt(cell.getTextContent().trim())==curClassificationPage && nextSibling != null) {
+                                                HtmlAnchor anchor = nextSibling.getFirstByXPath(".//a");
+                                                if (anchor != null) {
+                                                    anchor.click();
+                                                    Thread.sleep(30000);
+                                                    this.page = (HtmlPage) client.getCurrentWindow().getEnclosedPage();
+                                                    hasNext=true;
+                                                    curClassificationPage++;
+                                                }else{
+                                                    hasNext=false;
+                                                }
+                                                break;
+                                            }else{
+                                                hasNext=false;
+                                            }
+                                        }
+                                    }
+                                }else{
+                                    System.err.println("Element not found");
+                                    hasNext=false;
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    System.err.println("Element not found");
+                }
+            }while(hasNext);
+
+            for(int historyBack=1;historyBack<curClassificationPage;historyBack++){
+                client.getCurrentWindow().getHistory().back();
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return classifications;
+    }
+
     public Decision getDecision(){
         try{
             Decision res= new Decision();
 
             int applicationNumber = getApplicationNumber();
+            String redParty = getRedPartyName();
+            List<Classification> classifications = getClassifications();
 
-            String redParty="";
             String fafd="";
 
             int applicantId = 0;
@@ -86,8 +241,8 @@ public class ApplicationDetails{
                 System.out.println("Table with ID MainContent_ctrlTM_ctrlApplicant_ctrlApplicant_gvCustomers not found");
             }
 
-// Getting Trademark Info
-//            String tableXPath = "//*[@id='MainContent_ctrlTM_ctl30']/div/table/tbody";
+//          Getting Trademark Info
+//          String tableXPath = "//*[@id='MainContent_ctrlTM_ctl30']/div/table/tbody";
             String tableXPath = "//div[contains(@id,'tblMarkInfo')]//table[@class='alternated']/tbody";
             HtmlTableBody tableBody = page.getFirstByXPath(tableXPath);
 
@@ -121,62 +276,6 @@ public class ApplicationDetails{
                 System.out.println("Table body not found");
             }
 
-// Getting Classification Info
-//            HtmlTableBody classificationTbody = page.getFirstByXPath("//*[@id='MainContent_ctrlTM_tblClass']/table/tbody");
-            HtmlTableBody classificationTbody = page.getFirstByXPath("//div[contains(@id,'tblClass')]//table/tbody");
-
-            if (classificationTbody != null) {
-                for (HtmlTableRow row : classificationTbody.getRows()) {
-                    HtmlTableCell firstCell = row.getCell(0);
-                    if (firstCell != null && "Goods & Services Specification".equals(firstCell.getTextContent().trim())) {
-                        HtmlTableCell secondCell = row.getCell(1);
-                        if (secondCell != null) {
-                            HtmlTable innerTable = secondCell.getFirstByXPath(".//table");
-                            if (innerTable != null) {
-                                for (HtmlTableRow innerRow : innerTable.getRows()) {
-                                    if (innerRow.getFirstByXPath(".//th") != null) {
-                                        continue;
-                                    }
-                                    Classification newClassification = new Classification();
-                                    int i=0;
-                                    for (HtmlTableCell innerCell : innerRow.getCells()){
-                                        if(i==0){
-                                            newClassification.setClassId(Integer.parseInt(innerCell.getTextContent().trim()));
-                                        }else{
-                                            newClassification.setDescription(innerCell.getTextContent().trim());
-                                        }
-                                        i++;
-                                    }
-
-                                    res.addClassification(newClassification);
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                System.err.println("Element not found");
-            }
-
-//            Getting Red Party Name
-            HtmlTableBody linkedCasesTbody = page.getFirstByXPath("//*[@id='MainContent_ctrlProcedureList_gvwIPCases']/tbody");
-
-            if (linkedCasesTbody != null) {
-                List<HtmlTableRow> rows = linkedCasesTbody.getRows();
-
-                for (int i = 1; i < rows.size(); i++) {
-                    HtmlTableRow row = rows.get(i);
-                    HtmlTableCell secondCell = row.getCell(1);
-
-                    if (secondCell != null && secondCell.getTextContent().trim().startsWith("Proceedings")) {
-                        HtmlTableCell lastCell = row.getCell(row.getCells().size() - 1);
-                        redParty=lastCell.getTextContent().trim();
-                        System.out.println(redParty);
-                    }
-                }
-            } else {
-                System.err.println("Element not found");
-            }
 
 //            Get FAFD
             HtmlTableBody tbody = page.getFirstByXPath("//*[@id='MainContent_ctrlHistoryList_gvHistory']/tbody");
@@ -201,7 +300,7 @@ public class ApplicationDetails{
             res.getBinder().setRedParty(redParty);
             res.getBinder().setFafd(fafd);
 
-
+            res.setClassifications(classifications);
             res.getApplicant().setId(applicantId);
             res.getApplicant().setName(applicantName);
             res.getApplicant().setAddress(applicantAddress);
