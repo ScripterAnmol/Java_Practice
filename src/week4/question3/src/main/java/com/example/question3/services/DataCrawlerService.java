@@ -78,10 +78,10 @@ public class DataCrawlerService {
 
             searchResults.sortChronologically();
 
-            for(int j=1;j<5;j++){
-                searchResults.nextPage();
-                Thread.sleep(30000);
-            }
+//            for(int j=1;j<5;j++){
+//                searchResults.nextPage();
+//                Thread.sleep(30000);
+//            }
 
             do{
                 int currentPageTotalCase = searchResults.getTotalCaseOnCurrentPage();
